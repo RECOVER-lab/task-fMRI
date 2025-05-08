@@ -2,7 +2,7 @@
 Flywheel gear to process task-based fMRI BOLD sequences (motor and language tasks).
 The pipeline is desgined specifically for detecting consciousness of comatose patients
 
-# Task-based fMRI Pipeline (RECOVER Project)
+## Task-based fMRI Pipeline (RECOVER Project)
 Created by K. Nguyen and A. Wu, Mar 2025.
 
 This pipeline implements two testing methods:
