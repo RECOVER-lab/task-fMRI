@@ -1,0 +1,54 @@
+{
+    "config": {
+        "cluster_threshold": 2.5
+    },
+    "inputs": {
+        "fmriprep_dir": {
+            "base": "file",
+            "location": {
+                "name": "bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip",
+                "path": "/flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip"
+            },
+            "object": {
+                "size": 4320009866,
+                "type": null,
+                "mimetype": "application/octet-stream",
+                "modality": null,
+                "classification": {},
+                "tags": [],
+                "info": {},
+                "zip_member_count": null,
+                "version": 1,
+                "file_id": "",
+                "origin": {
+                    "type": "user",
+                    "id": ""
+                }
+            }
+        },
+        "design_template": {
+            "base": "file",
+            "location": {
+                "name": "design_test_script.fsf",
+                "path": "/flywheel/v0/input/design_template/design_test_script.fsf"
+            },
+            "object": {
+                "size": 8069,
+                "type": null,
+                "mimetype": "application/octet-stream",
+                "modality": null,
+                "classification": {},
+                "tags": [],
+                "info": {},
+                "zip_member_count": null,
+                "version": 1,
+                "file_id": "",
+                "origin": {
+                    "type": "user",
+                    "id": ""
+                }
+            }
+        }
+    },
+    "destination": {}
+}

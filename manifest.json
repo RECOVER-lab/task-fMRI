@@ -1,0 +1,55 @@
+{
+  "name": "taskfmri",
+  "label": "RECOVER-taskfMRI: two methods for analyzing motor and language fMRI tasks",
+  "description": "Run FEAT GLM and permutation test with ICA analysis. Generate a report with the results.",
+  "version": "0.1.0",
+  "inputs": {
+    "fmriprep_dir": {
+      "base": "file",
+      "description": "ZIP file containing the fMRIprep output directory (e.g., bids-fmriprep_<suffix>.zip)"
+    },
+    "design_template": {
+      "base": "file",
+      "description": "Design template for the feat FSL analysis (.fsf format)"
+    }
+  },
+  "config": {
+    "cluster_threshold": {
+      "default": 2.5,
+      "description": "Cluster threshold value for post-thresholding z-map",
+      "type": "number"
+    }
+  },
+  "command": "/flywheel/v0/run_pipeline.sh",
+  "author": "Alice Wu, Kim Nyugen",
+  "maintainer": "Alice Wu",
+  "license": "BSD-3-Clause",
+  "source": "https://github.com/alicewuhhh/Task-based_fMRI_pipeline",
+  "url": "",
+  "environment": {
+    "REQUESTS_CA_BUNDLE": "/etc/ssl/certs/ca-certificates.crt",
+    "FLYWHEEL": "/flywheel/v0",
+    "FSLDIR": "/opt/fsl-6.0.7.1",
+    "ANTSPATH": "/opt/ants-2.5.4/bin",
+    "FSLMULTIFILEQUIT": "TRUE",
+    "FSLTCLSH": "/opt/fsl-6.0.7.1/bin/fsltclsh",
+    "PATH": "/opt/fsl-6.0.7.1/bin:/opt/ants-2.5.4/bin:/opt/miniconda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "FSLGECUDAQ": "cuda.q",
+    "FSLOUTPUTTYPE": "NIFTI_GZ",
+    "DEBIAN_FRONTEND": "noninteractive",
+    "FSLWISH": "/opt/fsl-6.0.7.1/bin/fslwish",
+    "PWD": "/",
+    "TZ": "Etc/UTC",
+    "SHLVL": "0",
+    "_": "/usr/bin/printenv"
+  },
+  "custom": {
+    "gear-builder": {
+      "category": "analysis",
+      "image": "alicewu/taskfmri:0.1.0"
+    },
+    "flywheel": {
+      "suite": "BrainScienceCenter"
+    }
+  }
+}

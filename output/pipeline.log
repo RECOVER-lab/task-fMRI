@@ -1,0 +1,611 @@
+[Mon May  5 20:59:09 Etc 2025] === Directory Setup ===
+[Mon May  5 20:59:09 Etc 2025] Creating directories: /flywheel/v0/output, /flywheel/v0/work
+[Mon May  5 20:59:09 Etc 2025] Base directories: INPUT_DIR=/flywheel/v0/input, OUTPUT_DIR=/flywheel/v0/output, WORK_DIR=/flywheel/v0/work, SRC_DIR=/flywheel/v0/src
+[Mon May  5 20:59:09 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 20:59:09 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 20:59:09 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 20:59:09 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 20:59:09 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 20:59:09 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 20:59:09 Etc 2025] === Configuration Parsing ===
+[Mon May  5 20:59:09 Etc 2025] === Configuration Parsing ===
+/flywheel/v0/run_pipeline.sh: line 97: jq: command not found
+[Mon May  5 20:59:37 Etc 2025] === Directory Setup ===
+[Mon May  5 20:59:37 Etc 2025] Creating directories: /flywheel/v0/output, /flywheel/v0/work
+[Mon May  5 20:59:37 Etc 2025] Base directories: INPUT_DIR=/flywheel/v0/input, OUTPUT_DIR=/flywheel/v0/output, WORK_DIR=/flywheel/v0/work, SRC_DIR=/flywheel/v0/src
+[Mon May  5 20:59:37 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 20:59:37 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 20:59:37 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 20:59:37 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 20:59:37 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 20:59:37 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 20:59:37 Etc 2025] === Configuration Parsing ===
+[Mon May  5 20:59:37 Etc 2025] === Configuration Parsing ===
+/flywheel/v0/run_pipeline.sh: line 97: jq: command not found
+[Mon May  5 21:02:15 Etc 2025] === Directory Setup ===
+[Mon May  5 21:02:15 Etc 2025] Creating directories: /flywheel/v0/output, /flywheel/v0/work
+[Mon May  5 21:02:15 Etc 2025] Base directories: INPUT_DIR=/flywheel/v0/input, OUTPUT_DIR=/flywheel/v0/output, WORK_DIR=/flywheel/v0/work, SRC_DIR=/flywheel/v0/src
+[Mon May  5 21:02:15 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 21:02:15 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 21:02:15 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 21:02:15 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 21:02:15 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:02:15 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:02:15 Etc 2025] === Configuration Parsing ===
+[Mon May  5 21:02:15 Etc 2025] === Configuration Parsing ===
+/flywheel/v0/run_pipeline.sh: line 97: jq: command not found
+[Mon May  5 21:02:32 Etc 2025] === Directory Setup ===
+[Mon May  5 21:02:32 Etc 2025] Creating directories: /flywheel/v0/output, /flywheel/v0/work
+[Mon May  5 21:02:32 Etc 2025] Base directories: INPUT_DIR=/flywheel/v0/input, OUTPUT_DIR=/flywheel/v0/output, WORK_DIR=/flywheel/v0/work, SRC_DIR=/flywheel/v0/src
+[Mon May  5 21:02:32 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 21:02:32 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 21:02:32 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 21:02:32 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 21:02:32 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:02:32 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:02:32 Etc 2025] === Configuration Parsing ===
+[Mon May  5 21:02:32 Etc 2025] === Configuration Parsing ===
+/flywheel/v0/run_pipeline.sh: line 97: jq: command not found
+[Mon May  5 21:08:45 Etc 2025] === Directory Setup ===
+[Mon May  5 21:08:45 Etc 2025] Creating directories: /flywheel/v0/output, /flywheel/v0/work
+[Mon May  5 21:08:45 Etc 2025] Base directories: INPUT_DIR=/flywheel/v0/input, OUTPUT_DIR=/flywheel/v0/output, WORK_DIR=/flywheel/v0/work, SRC_DIR=/flywheel/v0/src
+[Mon May  5 21:08:45 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 21:08:45 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 21:08:45 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 21:08:45 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 21:08:45 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:08:45 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:08:45 Etc 2025] === Configuration Parsing ===
+[Mon May  5 21:08:45 Etc 2025] === Configuration Parsing ===
+/flywheel/v0/run_pipeline.sh: line 97: jq: command not found
+[Mon May  5 21:26:48 Etc 2025] === Directory Setup ===
+[Mon May  5 21:26:48 Etc 2025] Created directories: /flywheel/v0/output, /flywheel/v0/work
+[Mon May  5 21:26:48 Etc 2025] Base directories: INPUT_DIR=/flywheel/v0/input, OUTPUT_DIR=/flywheel/v0/output, WORK_DIR=/flywheel/v0/work, SRC_DIR=/flywheel/v0/src
++ log_message 'Starting RECOVER fMRI pipeline workflow'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] Starting RECOVER fMRI pipeline workflow'
+[Mon May  5 21:26:48 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 21:26:48 Etc 2025] Starting RECOVER fMRI pipeline workflow
++ log_message 'Log file: /flywheel/v0/output/pipeline.log'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] Log file: /flywheel/v0/output/pipeline.log'
+[Mon May  5 21:26:48 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 21:26:48 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
++ ARCHIVEDIR=/flywheel/v0/work
++ ROI=/flywheel/v0/input/ROI
++ export ARCHIVEDIR
++ export ROI
++ SCRIPTSDIR=/flywheel/v0/src/pipeline_scripts
++ FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py
++ OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
++ log_message 'Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py'
+[Mon May  5 21:26:48 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:26:48 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ local file=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
+++ date
++ tee -a /flywheel/v0/output/pipeline.log
++ echo '[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
+++ date
++ tee -a /flywheel/v0/output/pipeline.log
++ echo '[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ chmod +x /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ local file=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ chmod +x /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ local file=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ chmod +x /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ local file=/flywheel/v0/src/pipeline_scripts/ica_corr.py
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
+++ date
++ tee -a /flywheel/v0/output/pipeline.log
++ echo '[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/ica_corr.py ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ chmod +x /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/output_generator.py
++ local file=/flywheel/v0/src/pipeline_scripts/output_generator.py
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py'
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/output_generator.py ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py'
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py
++ chmod +x /flywheel/v0/src/pipeline_scripts/output_generator.py
++ log_section 'Input File Detection'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] === Input File Detection ==='
+[Mon May  5 21:26:48 Etc 2025] === Input File Detection ===
+[Mon May  5 21:26:48 Etc 2025] === Input File Detection ===
+++ head -n 1
+++ find /flywheel/v0/input/design_template -maxdepth 1 -type f -name '*.fsf'
++ DESIGN_FILE=/flywheel/v0/input/design_template/design_test_script.fsf
++ '[' -z /flywheel/v0/input/design_template/design_test_script.fsf ']'
++ check_file /flywheel/v0/input/design_template/design_test_script.fsf
++ local file=/flywheel/v0/input/design_template/design_test_script.fsf
++ log_message 'Checking file: /flywheel/v0/input/design_template/design_test_script.fsf'
+++ date
++ tee -a /flywheel/v0/output/pipeline.log
++ echo '[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/input/design_template/design_test_script.fsf'
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/input/design_template/design_test_script.fsf
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/input/design_template/design_test_script.fsf
++ '[' '!' -f /flywheel/v0/input/design_template/design_test_script.fsf ']'
++ log_message 'File exists: /flywheel/v0/input/design_template/design_test_script.fsf'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/input/design_template/design_test_script.fsf'
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/input/design_template/design_test_script.fsf
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/input/design_template/design_test_script.fsf
++ log_message 'Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf'
+[Mon May  5 21:26:48 Etc 2025] Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf
+[Mon May  5 21:26:48 Etc 2025] Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf
+++ find /flywheel/v0/input/fmriprep_dir -maxdepth 1 -type f -name '*.zip'
+++ head -n 1
++ FMRIPREP_ZIP=/flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ '[' -z /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip ']'
++ check_file /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ local file=/flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ log_message 'Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
+[Mon May  5 21:26:48 Etc 2025] Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ '[' '!' -f /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip ']'
++ log_message 'File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+++ date
++ tee -a /flywheel/v0/output/pipeline.log
++ echo '[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
+[Mon May  5 21:26:48 Etc 2025] File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ log_message 'fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+[Mon May  5 21:26:48 Etc 2025] fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
+[Mon May  5 21:26:48 Etc 2025] fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ log_section 'Configuration Parsing'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:26:48 Etc 2025] === Configuration Parsing ==='
+[Mon May  5 21:26:48 Etc 2025] === Configuration Parsing ===
+[Mon May  5 21:26:48 Etc 2025] === Configuration Parsing ===
++ CONFIG_FILE=/flywheel/v0/config.json
++ '[' -f /flywheel/v0/config.json ']'
+++ jq -r '.config.cluster_threshold // 3.1' /flywheel/v0/config.json
+/flywheel/v0/run_pipeline.sh: line 124: jq: command not found
++ CLUSTER_THRESHOLD=
+[Mon May  5 21:34:04 Etc 2025] === Directory Setup ===
+[Mon May  5 21:34:04 Etc 2025] Created directories: /flywheel/v0/output, /flywheel/v0/work
+[Mon May  5 21:34:04 Etc 2025] Base directories: INPUT_DIR=/flywheel/v0/input, OUTPUT_DIR=/flywheel/v0/output, WORK_DIR=/flywheel/v0/work, SRC_DIR=/flywheel/v0/src
++ log_message 'Starting RECOVER fMRI pipeline workflow'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] Starting RECOVER fMRI pipeline workflow'
+[Mon May  5 21:34:04 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 21:34:04 Etc 2025] Starting RECOVER fMRI pipeline workflow
++ log_message 'Log file: /flywheel/v0/output/pipeline.log'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] Log file: /flywheel/v0/output/pipeline.log'
+[Mon May  5 21:34:04 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 21:34:04 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
++ ARCHIVEDIR=/flywheel/v0/work
++ ROI=/flywheel/v0/input/ROI
++ export ARCHIVEDIR
++ export ROI
++ SCRIPTSDIR=/flywheel/v0/src/pipeline_scripts
++ FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py
++ OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
++ log_message 'Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py'
+[Mon May  5 21:34:04 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:34:04 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ local file=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
+++ date
++ tee -a /flywheel/v0/output/pipeline.log
++ echo '[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ chmod +x /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ local file=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ chmod +x /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ local file=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ chmod +x /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ local file=/flywheel/v0/src/pipeline_scripts/ica_corr.py
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/ica_corr.py ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ chmod +x /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/output_generator.py
++ local file=/flywheel/v0/src/pipeline_scripts/output_generator.py
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py'
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/output_generator.py ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py'
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py
++ chmod +x /flywheel/v0/src/pipeline_scripts/output_generator.py
++ log_section 'Input File Detection'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] === Input File Detection ==='
+[Mon May  5 21:34:04 Etc 2025] === Input File Detection ===
+[Mon May  5 21:34:04 Etc 2025] === Input File Detection ===
+++ find /flywheel/v0/input/design_template -maxdepth 1 -type f -name '*.fsf'
+++ head -n 1
++ DESIGN_FILE=/flywheel/v0/input/design_template/design_test_script.fsf
++ '[' -z /flywheel/v0/input/design_template/design_test_script.fsf ']'
++ check_file /flywheel/v0/input/design_template/design_test_script.fsf
++ local file=/flywheel/v0/input/design_template/design_test_script.fsf
++ log_message 'Checking file: /flywheel/v0/input/design_template/design_test_script.fsf'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/input/design_template/design_test_script.fsf'
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/input/design_template/design_test_script.fsf
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/input/design_template/design_test_script.fsf
++ '[' '!' -f /flywheel/v0/input/design_template/design_test_script.fsf ']'
++ log_message 'File exists: /flywheel/v0/input/design_template/design_test_script.fsf'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/input/design_template/design_test_script.fsf'
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/input/design_template/design_test_script.fsf
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/input/design_template/design_test_script.fsf
++ log_message 'Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf'
+++ date
++ tee -a /flywheel/v0/output/pipeline.log
++ echo '[Mon May  5 21:34:04 Etc 2025] Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf'
+[Mon May  5 21:34:04 Etc 2025] Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf
+[Mon May  5 21:34:04 Etc 2025] Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf
+++ find /flywheel/v0/input/fmriprep_dir -maxdepth 1 -type f -name '*.zip'
+++ head -n 1
++ FMRIPREP_ZIP=/flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ '[' -z /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip ']'
++ check_file /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ local file=/flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ log_message 'Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
+[Mon May  5 21:34:04 Etc 2025] Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ '[' '!' -f /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip ']'
++ log_message 'File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
+[Mon May  5 21:34:04 Etc 2025] File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ log_message 'fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+++ date
++ tee -a /flywheel/v0/output/pipeline.log
++ echo '[Mon May  5 21:34:04 Etc 2025] fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+[Mon May  5 21:34:04 Etc 2025] fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
+[Mon May  5 21:34:04 Etc 2025] fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ log_section 'Configuration Parsing'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:34:04 Etc 2025] === Configuration Parsing ==='
+[Mon May  5 21:34:04 Etc 2025] === Configuration Parsing ===
+[Mon May  5 21:34:04 Etc 2025] === Configuration Parsing ===
++ CONFIG_FILE=/flywheel/v0/config.json
++ '[' -f /flywheel/v0/config.json ']'
+++ jq -r '.config.cluster_threshold // 3.1' /flywheel/v0/config.json
+/flywheel/v0/run_pipeline.sh: line 124: jq: command not found
++ CLUSTER_THRESHOLD=
+[Mon May  5 21:45:20 Etc 2025] Starting setup...
+[Mon May  5 21:45:20 Etc 2025] Created directories: /flywheel/v0/output, /flywheel/v0/work
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Logging redirected. Pipeline starting...'
+[Mon May  5 21:45:20 Etc 2025] Logging redirected. Pipeline starting...
++ log_message 'Starting RECOVER fMRI pipeline workflow'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Starting RECOVER fMRI pipeline workflow'
+[Mon May  5 21:45:20 Etc 2025] Starting RECOVER fMRI pipeline workflow
+[Mon May  5 21:45:20 Etc 2025] Starting RECOVER fMRI pipeline workflow
++ log_message 'Log file: /flywheel/v0/output/pipeline.log'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Log file: /flywheel/v0/output/pipeline.log'
+[Mon May  5 21:45:20 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
+[Mon May  5 21:45:20 Etc 2025] Log file: /flywheel/v0/output/pipeline.log
++ ARCHIVEDIR=/flywheel/v0/work
++ ROI=/flywheel/v0/input/ROI
++ export ARCHIVEDIR
++ export ROI
++ SCRIPTSDIR=/flywheel/v0/src/pipeline_scripts
++ FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py
++ OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
++ log_message 'Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py'
+[Mon May  5 21:45:20 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:45:20 Etc 2025] Script paths: FEAT_STATS=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh, RANDOMISE_STATS=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh, CAL_POST_STATS=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh, ICA_CORRELATION=/flywheel/v0/src/pipeline_scripts/ica_corr.py, OUTPUT_GENERATOR=/flywheel/v0/src/pipeline_scripts/output_generator.py
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ local file=/flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ chmod +x /flywheel/v0/src/pipeline_scripts/feat_contrasts_recover_cluster.sh
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ local file=/flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh'
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ chmod +x /flywheel/v0/src/pipeline_scripts/run_permutation_test.sh
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ local file=/flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh'
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ chmod +x /flywheel/v0/src/pipeline_scripts/calc_post_stats_thresh.sh
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ local file=/flywheel/v0/src/pipeline_scripts/ica_corr.py
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
+++ date
++ tee -a /flywheel/v0/output/pipeline.log
++ echo '[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/ica_corr.py ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py'
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ chmod +x /flywheel/v0/src/pipeline_scripts/ica_corr.py
++ for script in "$FEAT_STATS" "$RANDOMISE_STATS" "$CAL_POST_STATS" "$ICA_CORRELATION" "$OUTPUT_GENERATOR"
++ check_file /flywheel/v0/src/pipeline_scripts/output_generator.py
++ local file=/flywheel/v0/src/pipeline_scripts/output_generator.py
++ log_message 'Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py'
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/src/pipeline_scripts/output_generator.py
++ '[' '!' -f /flywheel/v0/src/pipeline_scripts/output_generator.py ']'
++ log_message 'File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py'
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/src/pipeline_scripts/output_generator.py
++ chmod +x /flywheel/v0/src/pipeline_scripts/output_generator.py
++ log_section 'Input File Detection'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] === Input File Detection ==='
+[Mon May  5 21:45:20 Etc 2025] === Input File Detection ===
+[Mon May  5 21:45:20 Etc 2025] === Input File Detection ===
+++ find /flywheel/v0/input/design_template -maxdepth 1 -type f -name '*.fsf'
+++ head -n 1
++ DESIGN_FILE=/flywheel/v0/input/design_template/design_test_script.fsf
++ '[' -z /flywheel/v0/input/design_template/design_test_script.fsf ']'
++ check_file /flywheel/v0/input/design_template/design_test_script.fsf
++ local file=/flywheel/v0/input/design_template/design_test_script.fsf
++ log_message 'Checking file: /flywheel/v0/input/design_template/design_test_script.fsf'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/input/design_template/design_test_script.fsf'
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/input/design_template/design_test_script.fsf
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/input/design_template/design_test_script.fsf
++ '[' '!' -f /flywheel/v0/input/design_template/design_test_script.fsf ']'
++ log_message 'File exists: /flywheel/v0/input/design_template/design_test_script.fsf'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/input/design_template/design_test_script.fsf'
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/input/design_template/design_test_script.fsf
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/input/design_template/design_test_script.fsf
++ log_message 'Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf'
+[Mon May  5 21:45:20 Etc 2025] Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf
+[Mon May  5 21:45:20 Etc 2025] Design template file found: /flywheel/v0/input/design_template/design_test_script.fsf
+++ find /flywheel/v0/input/fmriprep_dir -maxdepth 1 -type f -name '*.zip'
+++ head -n 1
++ FMRIPREP_ZIP=/flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ '[' -z /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip ']'
++ check_file /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ local file=/flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ log_message 'Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
+[Mon May  5 21:45:20 Etc 2025] Checking file: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ '[' '!' -f /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip ']'
++ log_message 'File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
+[Mon May  5 21:45:20 Etc 2025] File exists: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ log_message 'fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip'
+[Mon May  5 21:45:20 Etc 2025] fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
+[Mon May  5 21:45:20 Etc 2025] fmriprep zip file found: /flywheel/v0/input/fmriprep_dir/bids-fmriprep_2024-10-18_10_48_51_67cf0442cc5019460f9cc3aa.zip
++ log_section 'Configuration Parsing'
++ tee -a /flywheel/v0/output/pipeline.log
+++ date
++ echo '[Mon May  5 21:45:20 Etc 2025] === Configuration Parsing ==='
+[Mon May  5 21:45:20 Etc 2025] === Configuration Parsing ===
+[Mon May  5 21:45:20 Etc 2025] === Configuration Parsing ===
++ CONFIG_FILE=/flywheel/v0/config.json
++ '[' -f /flywheel/v0/config.json ']'
+++ jq -r '.config.cluster_threshold // 3.1' /flywheel/v0/config.json
+/flywheel/v0/run_pipeline.sh: line 123: jq: command not found
++ CLUSTER_THRESHOLD=
