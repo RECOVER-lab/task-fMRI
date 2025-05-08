@@ -8,7 +8,7 @@ Created by K. Nguyen and A. Wu, Mar 2025.
 This pipeline implements two testing methods:
 - **GLM Testing:** Adapted from the MGH protocol. Use GLM model to conduct the analysis. Cluster thresholding at Z=3.1
 - **Permutation Testing:** Non-parametric method. Randomly shuffling or rearranging data to estimate the sampling distribution of a test statistic under the null hypothesis. Includes a threshold-free clustering enhancement (TFCE) method.
-- **ICA** 
+- **ICA** Temporal correlation with task regressor and spatial correlation with GLM output Z-stat map
 
 ---
 
@@ -36,7 +36,7 @@ The pipeline uses outputs from fMRIPrep gear on flywheel(version: 23.0.1).
    - Calculates quantitative measurements based on the output of the previous step.
 
 4. **`ica_corr.py`:**
-   - Runs ICA analysis on time-series data. Temporal correlation with task regressor and spatial orrelation with GLM zstat
+   - Runs ICA analysis on time-series data. Temporal correlation with task regressor and spatial correlation with GLM zstat
 
 6. **`output_generator.py`:**  
    - Calls `data_processor.py` and uses `html_template.py`.
