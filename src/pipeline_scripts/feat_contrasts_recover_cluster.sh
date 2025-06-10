@@ -20,6 +20,8 @@ export OMP_NUM_THREADS=4
 process_subject_task() {
     subject=$1
     task=$2
+
+    SUBDIR=${DATADIR}/sub-${subject}/ses-01
     mkdir -p ${SUBDIR}/fsl_stats
 
     T1=${SUBDIR}/anat/*MNI152NLin6Asym_desc-preproc_T1w.nii.gz
@@ -35,7 +37,7 @@ process_subject_task() {
     confinput=${SUBDIR}/sub-${subject}_ses-01_task-${task}_confounds_motion.txt
     output=${SUBDIR}/fsl_stats/sub-${subject}_task-${task}_contrasts
 
-	for i in $DESIGN_FILE; do
+	for i in $TEMPLATE; do
         sed -e 's@SUB_input_SUB@'$input'@g' \
             -e 's@SUB_confinput_SUB@'$confinput'@g' \
             -e 's@SUB_T1_SUB@'$T1'@g' \
