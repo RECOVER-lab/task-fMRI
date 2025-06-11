@@ -15,7 +15,7 @@ export USER="flywheel"
 # Default configuration
 #TASKS="motor_run-01 motor_run-02 lang"
 TASKS="motor_run-01"
-CLUSTER_THRESHOLD=3.1
+CLUSTER_THRESHOLD=2.35
 
 # Usage message
 usage() {
@@ -42,7 +42,7 @@ check_dir() {
 }
 
 # Flywheel directories
-base_dir=/flywheel/v0
+base_dir=/home/detrelab/Desktop/fw_gear_taskfMRI
 INPUT_DIR=${base_dir}/input
 OUTPUT_DIR=${base_dir}/output
 WORK_DIR=${base_dir}/work
@@ -70,60 +70,57 @@ done
 # Find input files dynamically
 # Find .fsf file in design_template directory
 DESIGN_FILE=$(find "$INPUT_DIR/design_template" -maxdepth 1 -type f -name "*.fsf" | head -n 1)
-if [ -z "$DESIGN_FILE" ]; then
-    echo "[$(date)] Error: No .fsf file found in $INPUT_DIR/design_template" >&2
-    exit 1
-fi
-check_file "$DESIGN_FILE"
+#if [ -z "$DESIGN_FILE" ]; then
+    #echo "[$(date)] Error: No .fsf file found in $INPUT_DIR/design_template" >&2
+    #exit 1
+#fi
+#check_file "$DESIGN_FILE"
 
 # Find .zip file in fmriprep_dir directory
-FMRIPREP_ZIP=$(find "$INPUT_DIR/fmriprep_dir" -maxdepth 1 -type f -name "*.zip" | head -n 1)
-if [ -z "$FMRIPREP_ZIP" ]; then
-    echo "[$(date)] Error: No .zip file found in $INPUT_DIR/fmriprep_dir" >&2
-    exit 1
-fi
-check_file "$FMRIPREP_ZIP"
+#FMRIPREP_ZIP=$(find "$INPUT_DIR/fmriprep_dir" -maxdepth 1 -type f -name "*.zip" | head -n 1)
+#if [ -z "$FMRIPREP_ZIP" ]; then
+#    echo "[$(date)] Error: No .zip file found in $INPUT_DIR/fmriprep_dir" >&2
+ #   exit 1
+#fi
+#check_file "$FMRIPREP_ZIP"
 
 # Parse configuration from config.json
-CONFIG_FILE=${base_dir}/config.json
-if [ -f "$CONFIG_FILE" ]; then
-    CLUSTER_THRESHOLD=$(jq -r '.config.cluster_threshold // 3.1' "$CONFIG_FILE")
-fi
+#CONFIG_FILE=${base_dir}/config.json
+#if [ -f "$CONFIG_FILE" ]; then
+    #CLUSTER_THRESHOLD=$(jq -r '.config.cluster_threshold // 3.1' "$CONFIG_FILE")
+#fi
 
 # Checkpoint: Extract fmriprep files
-FMRIPREP_DIR_NAME=$(basename "$FMRIPREP_ZIP" .zip)
-UNZIP_DIR="${WORK_DIR}/fmriprep_unzipped"
-mkdir -p "$UNZIP_DIR"
-unzip -o "$FMRIPREP_ZIP" -d "$UNZIP_DIR" || {
-    echo "[$(date)] Error: Failed to unzip $FMRIPREP_ZIP" >&2
-    exit 1
-}
+#FMRIPREP_DIR_NAME=$(basename "$FMRIPREP_ZIP" .zip)
+#UNZIP_DIR="${WORK_DIR}/fmriprep_unzipped"
+#mkdir -p "$UNZIP_DIR"
+#unzip -o "$FMRIPREP_ZIP" -d "$UNZIP_DIR" || {
+#    echo "[$(date)] Error: Failed to unzip $FMRIPREP_ZIP" >&2
+#    exit 1
+#}
 # Debug: List unzipped directory structure
-echo "[$(date)] Debug: Unzipped directory structure:"
-find "$UNZIP_DIR" -maxdepth 4 -type d
+#echo "[$(date)] Debug: Unzipped directory structure:"
+#find "$UNZIP_DIR" -maxdepth 4 -type d
 
-FMRIPREP_DIR=$(find "$UNZIP_DIR" -maxdepth 3 -type d -name "$FMRIPREP_DIR_NAME" || true)
-if [ -z "$FMRIPREP_DIR" ]; then
+#FMRIPREP_DIR
+#if [ -z "$FMRIPREP_DIR" ]; then
     # Fallback: Search for any sub-* directory
-    FMRIPREP_DIR=$(find "$UNZIP_DIR" -maxdepth 3 -type d -name "sub-*" | head -n 1)
-fi
-if [ ! -d "$FMRIPREP_DIR" ]; then
-    echo "[$(date)] Error: fmriprep directory not found after extraction in $UNZIP_DIR" >&2
-    exit 1
-fi
-check_dir "$FMRIPREP_DIR"
+#    FMRIPREP_DIR=$(find "$UNZIP_DIR" -maxdepth 3 -type d -name "sub-*" | head -n 1)
+#fi
+#if [ ! -d "$FMRIPREP_DIR" ]; then
+#    echo "[$(date)] Error: fmriprep directory not found after extraction in $UNZIP_DIR" >&2
+#    exit 1
+#fi
+#check_dir "$FMRIPREP_DIR"
 
 # Checkpoint: Extract subject ID and set SUBDIR
-SUBJECT_DIR=$(find "$FMRIPREP_DIR" -maxdepth 3 -type d -name "sub-*" | head -n 1)
-if [ -z "$SUBJECT_DIR" ]; then
-    echo "[$(date)] Error: No subject directory (sub-*) found in $FMRIPREP_DIR" >&2
-    exit 1
-fi
-SUBJECT=$(find "$FMRIPREP_DIR" -maxdepth 3 -type d -name "sub-*" | sed -E 's|.*/sub-([^/]+).*|\1|' | head -n 1)
-if [ -z "$SUBJECT" ]; then
-    echo "[$(date)] Error: No subject ID (sub-*) found in $FMRIPREP_DIR" >&2
-    exit 1
-fi
+SUBJECT_DIR="/home/detrelab/Desktop/fw_gear_taskfMRI/input/fmriprep_dir/67cf0442cc5019460f9cc3aa/sub-UPN007trial2"
+#if [ -z "$SUBJECT_DIR" ]; then
+#    echo "[$(date)] Error: No subject directory (sub-*) found in $FMRIPREP_DIR" >&2
+ #   exit 1
+#fi
+#SUBJECT=$(find "$FMRIPREP_DIR" -maxdepth 3 -type d -name "sub-*" | sed -E 's|.*/sub-([^/]+).*|\1|' |
+SUBJECT="UPN007trial2"
 # Set SUBDIR to $SUBJECT_DIR/ses-01
 SUBDIR="$SUBJECT_DIR/ses-01"
 export SUBDIR
@@ -170,6 +167,7 @@ run_permutation_test() {
 # Function to run calc_post_stats_thresh.sh
 run_cal_post_stats() {
     local subject=$1
+    export CLUSTER_THRESHOLD
     # Checkpoint: Verify inputs for calc_post_stats
     for task in $TASKS; do
         local feat_dir="$SUBDIR/fsl_stats/sub-${subject}_task-${task}_contrasts.feat"
@@ -189,7 +187,7 @@ run_cal_post_stats() {
 # Function to run ICA
 run_ica() {
     local subjects="$@"
-    python "$ICA_CORRELATION" --sub_dir "$SUBDIR" --tasks "$TASKS" "$subjects" || {
+    python3 "$ICA_CORRELATION" --sub_dir "$SUBDIR" --tasks "$TASKS" "$subjects" || {
         echo "[$(date)] Error: ica_corr.py failed for subjects $subjects" >&2
         exit 1
     }
@@ -199,18 +197,18 @@ run_ica() {
 run_output_generator() {
     local subject=$1
     export TASKS
-    python "$OUTPUT_GENERATOR" "$subject" || {
+    python3 "$OUTPUT_GENERATOR" "$subject" || {
         echo "[$(date)] Error: output_generator.py failed for subject $subject" >&2
         exit 1
     }
 }
 
 # Execute steps
-run_feat_stats "$SUBJECT"
-run_permutation_test "$SUBJECT"
-run_ica "$SUBJECT"
+#run_feat_stats "$SUBJECT"
+#run_permutation_test "$SUBJECT"
+#run_ica "$SUBJECT"
 run_cal_post_stats "$SUBJECT"
-run_output_generator "$SUBJECT"
+#run_output_generator "$SUBJECT"
 
 # Checkpoint: Organize outputs
 cd "$SUBDIR"
