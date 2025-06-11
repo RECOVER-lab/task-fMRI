@@ -1,8 +1,8 @@
 #!/opt/anaconda3/bin/python
 # Python 3.8.20
 # output_generator.py: Simplified and optimized functions to generate PDF and HTML reports
-# Updated to include separate Z-stat and TFCE tables, and to match HTML layout for native and MNI spaces, Oct 2025
-# Updated to add unthresholded viewers, generate HTML directly if plots/tables exist, and adjust sizes, Apr 2025
+# Updated to include separate Z-stat and TFCE tables, and to match HTML layout for native and MNI spaces, March 2025
+# Updated to add unthresholded viewers,  HTML directly if plots/tables exist, and adjust sizes, Apr 2025
 # Updated to restore iframe-based viewers with links and always regenerate viewers, Apr 2025
 
 import os
@@ -18,10 +18,9 @@ from html_template import HTML_TEMPLATE
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class OutputGenerator:
-    def __init__(self, subject, path_img):
+    def __init__(self, subject, subject_path):
         self.subject = subject
-        self.path_img = path_img
-        self.subject_path = os.path.join(path_img, f"derivatives/sub-{subject}/ses-01")
+        self.subject_path = subject_path
         self.output_dir = os.path.join(self.subject_path, "post_stats")
         os.makedirs(self.output_dir, exist_ok=True)  # Ensure directory exists once here
         logging.info(f"Initializing OutputGenerator for subject {subject}")
@@ -289,14 +288,14 @@ class OutputGenerator:
 
 def main(subjects):
     logging.info("Starting main execution")
-    path_img = os.environ.get('ARCHIVEDIR')
+    subject_path = os.environ.get('SUBDIR')
     roi_path = os.environ.get('ROI')
     from data_processor import DataProcessor
 
     for subject in subjects:
         logging.info(f"Processing subject: {subject}")
-        output_generator = OutputGenerator(subject, path_img)
-        data_processor = DataProcessor(subject, path_img, roi_path)
+        output_generator = OutputGenerator(subject, subject_path)
+        data_processor = DataProcessor(subject, subject_path, roi_path)
         data = data_processor.process_data()
         output_generator.generate_output(data)
 
