@@ -13,8 +13,8 @@ set -o pipefail
 
 export USER="flywheel"
 # Default configuration
-#TASKS="motor_run-01 motor_run-02 lang"
-TASKS="motor_run-01"
+TASKS="motor_run-01 motor_run-02 lang"
+# TASKS="motor_run-01"
 CLUSTER_THRESHOLD=2.35
 
 # Usage message
@@ -41,8 +41,15 @@ check_dir() {
     fi
 }
 
+# Set ANTs path
+export PATH="/Users/aliceqichaowu/ANTs/bin:$PATH"
+if ! command -v antsApplyTransforms &> /dev/null; then
+    echo "Error: antsApplyTransforms not found. Please verify ANTs installation at /Users/aliceqichaowu/ANTs/bin or adjust PATH."
+    exit 1
+fi
+
 # Flywheel directories
-base_dir=/home/detrelab/Desktop/fw_gear_taskfMRI
+base_dir=/Users/aliceqichaowu/Downloads/fw_gear_taskfMRI
 INPUT_DIR=${base_dir}/input
 OUTPUT_DIR=${base_dir}/output
 WORK_DIR=${base_dir}/work
@@ -114,7 +121,7 @@ DESIGN_FILE=$(find "$INPUT_DIR/design_template" -maxdepth 1 -type f -name "*.fsf
 #check_dir "$FMRIPREP_DIR"
 
 # Checkpoint: Extract subject ID and set SUBDIR
-SUBJECT_DIR="/home/detrelab/Desktop/fw_gear_taskfMRI/input/fmriprep_dir/67cf0442cc5019460f9cc3aa/sub-UPN007trial2"
+SUBJECT_DIR="/Users/aliceqichaowu/Downloads/fw_gear_taskfMRI/input/fmriprep_dir/67cf0442cc5019460f9cc3aa/sub-UPN007trial2"
 #if [ -z "$SUBJECT_DIR" ]; then
 #    echo "[$(date)] Error: No subject directory (sub-*) found in $FMRIPREP_DIR" >&2
  #   exit 1
@@ -185,9 +192,10 @@ run_cal_post_stats() {
 }
 
 # Function to run ICA
+
 run_ica() {
     local subjects="$@"
-    python3 "$ICA_CORRELATION" --sub_dir "$SUBDIR" --tasks "$TASKS" "$subjects" || {
+    python "$ICA_CORRELATION" --sub_dir "$SUBDIR" --tasks "$TASKS" "$subjects" || {
         echo "[$(date)] Error: ica_corr.py failed for subjects $subjects" >&2
         exit 1
     }
@@ -197,19 +205,20 @@ run_ica() {
 run_output_generator() {
     local subject=$1
     export TASKS
-    python3 "$OUTPUT_GENERATOR" "$subject" || {
+    python "$OUTPUT_GENERATOR" "$subject" || {
         echo "[$(date)] Error: output_generator.py failed for subject $subject" >&2
         exit 1
     }
 }
 
 # Execute steps
-#run_feat_stats "$SUBJECT"
-#run_permutation_test "$SUBJECT"
-#run_ica "$SUBJECT"
+run_feat_stats "$SUBJECT"
+run_permutation_test "$SUBJECT"
+run_ica "$SUBJECT"
 run_cal_post_stats "$SUBJECT"
-#run_output_generator "$SUBJECT"
+run_output_generator "$SUBJECT"
 
 # Checkpoint: Organize outputs
 cd "$SUBDIR"
+del post_stats/*.txt
 zip -r "$OUTPUT_DIR/taskfMRI_outputs.zip" post_stats/
