@@ -1,14 +1,16 @@
 #!/bin/bash
-# cal_post_stats_thresh.sh: Splits ROIs and z-maps, performs transformations, and computes stats.
+# calc_post_stats_thresh.sh: Splits ROIs and z-maps, performs transformations, and computes stats.
 # Created for RECOVER project by A. Wu, Feb 2025
 # Updated to include TFCE stats from randomise permutation test, Mar 2025
 # Updated to save ROIs in subject-specific ROI folder, Mar 2025
 # Updated to separate STG and Heschl ROIs for language task, Mar 2025
 # Updated to include Dice and Coverage Percentage for TFCE vs. Z-stat comparison without re-thresholding TFCE, Mar 2025
 # Updated to compute two coverage percentages (t-map and z-map denominators) for TFCE and Z-stat, Apr 2025
+# Updated to include t-map splitting and inverse transformation to native space, Jun 2025
 
 # Exit on any error
 set -e
+set -x
 
 # Check if at least one subject ID was provided
 if [ $# -eq 0 ]; then
@@ -90,11 +92,7 @@ calculate_coverage() {
 preprocess_subject() {
     local subject=$1
     SUBJ_ROI_DIR=${SUBDIR}/ROI  # Subject-specific ROI directory
-
-    # Create subject-specific ROI directory
-    mkdir -p "$SUBJ_ROI_DIR"
-
-   # Input and output files for T1w and ROIs
+    # Input and output files for T1w and ROIs
     T1W_PREPROC=${SUBDIR}/anat/sub-${subject}_ses-01_run-01_desc-preproc_T1w.nii.gz
     BRAIN_MASK=${SUBDIR}/anat/sub-${subject}_ses-01_run-01_desc-brain_mask.nii.gz
     T1W_SKULL_STRIPPED=${SUBDIR}/anat/sub-${subject}_ses-01_run-01_desc-brain_T1w.nii.gz
@@ -108,17 +106,57 @@ preprocess_subject() {
     HESCHL_NATIVE=${SUBJ_ROI_DIR}/Heschl_sub_t1w_native.nii.gz
     HESCHL_NATIVE_LEFT=${SUBJ_ROI_DIR}/Heschl_sub_t1w_native_left.nii.gz
     HESCHL_NATIVE_RIGHT=${SUBJ_ROI_DIR}/Heschl_sub_t1w_native_right.nii.gz
-    
+
+    # Create subject-specific ROI directory
+    mkdir -p "$SUBJ_ROI_DIR"
+    if [ ! -d "$SUBJ_ROI_DIR" ]; then
+        echo "Error: Failed to create directory $SUBJ_ROI_DIR" >&2
+        exit 1
+    fi
+
     # Skull-strip T1w
     echo "Skull-stripping T1w for sub-${subject}..."
+    if [ ! -f "$T1W_PREPROC" ]; then
+        echo "Error: T1W_PREPROC file does not exist: $T1W_PREPROC" >&2
+        exit 1
+    fi
+    if [ ! -f "$BRAIN_MASK" ]; then
+        echo "Error: BRAIN_MASK file does not exist: $BRAIN_MASK" >&2
+        exit 1
+    fi
     fslmaths "$T1W_PREPROC" -mas "$BRAIN_MASK" "$T1W_SKULL_STRIPPED"
+    if [ ! -f "$T1W_SKULL_STRIPPED" ]; then
+        echo "Error: Failed to create skull-stripped T1w file: $T1W_SKULL_STRIPPED" >&2
+        exit 1
+    fi
     echo "Skull-stripped T1w saved as: $T1W_SKULL_STRIPPED"
 
+    # Verify ROI input files
+    for roi_file in "${ROI}/SMA_PMC.nii.gz" "${ROI}/STG.nii.gz" "${ROI}/Heschl.nii.gz"; do
+        if [ ! -f "$roi_file" ]; then
+            echo "Error: ROI file $roi_file does not exist" >&2
+            exit 1
+        fi
+    done
+
     # Resample ROIs by the shape of Z-map into subject-specific ROI folder
+    echo "Resampling ROIs for sub-${subject}..."
     flirt -in ${ROI}/SMA_PMC.nii.gz -ref ${SUBDIR}/fsl_stats/sub-${subject}_task-motor_run-01_contrasts.feat/stats/zstat1.nii.gz -applyxfm -usesqform -out ${SUBJ_ROI_DIR}/SMA_PMC_sub.nii.gz
+    if [ ! -f "${SUBJ_ROI_DIR}/SMA_PMC_sub.nii.gz" ]; then
+        echo "Error: Failed to create ${SUBJ_ROI_DIR}/SMA_PMC_sub.nii.gz" >&2
+        exit 1
+    fi
     flirt -in ${ROI}/STG.nii.gz -ref ${SUBDIR}/fsl_stats/sub-${subject}_task-motor_run-01_contrasts.feat/stats/zstat1.nii.gz -applyxfm -usesqform -out ${SUBJ_ROI_DIR}/STG_sub.nii.gz
+    if [ ! -f "${SUBJ_ROI_DIR}/STG_sub.nii.gz" ]; then
+        echo "Error: Failed to create ${SUBJ_ROI_DIR}/STG_sub.nii.gz" >&2
+        exit 1
+    fi
     flirt -in ${ROI}/Heschl.nii.gz -ref ${SUBDIR}/fsl_stats/sub-${subject}_task-motor_run-01_contrasts.feat/stats/zstat1.nii.gz -applyxfm -usesqform -out ${SUBJ_ROI_DIR}/Heschl_sub.nii.gz
-    
+    if [ ! -f "${SUBJ_ROI_DIR}/Heschl_sub.nii.gz" ]; then
+        echo "Error: Failed to create ${SUBJ_ROI_DIR}/Heschl_sub.nii.gz" >&2
+        exit 1
+    fi
+
     # Split ROIs into left and right hemispheres in MNI space
     echo "Splitting ROIs in MNI space for sub-${subject}..."
     fslmaths "${SUBJ_ROI_DIR}/SMA_PMC_sub.nii.gz" -roi 1 45 -1 -1 -1 -1 0 1 "${SUBJ_ROI_DIR}/SMA_PMC_sub_left.nii.gz"
@@ -128,7 +166,12 @@ preprocess_subject() {
     fslmaths "${SUBJ_ROI_DIR}/Heschl_sub.nii.gz" -roi 1 45 -1 -1 -1 -1 0 1 "${SUBJ_ROI_DIR}/Heschl_sub_left.nii.gz"
     fslmaths "${SUBJ_ROI_DIR}/Heschl_sub.nii.gz" -roi 45 90 -1 -1 -1 -1 0 1 "${SUBJ_ROI_DIR}/Heschl_sub_right.nii.gz"
     echo "MNI ROIs split: ${SUBJ_ROI_DIR}/SMA_PMC_sub_left.nii.gz, ${SUBJ_ROI_DIR}/SMA_PMC_sub_right.nii.gz, ${SUBJ_ROI_DIR}/STG_sub_left.nii.gz, ${SUBJ_ROI_DIR}/STG_sub_right.nii.gz, ${SUBJ_ROI_DIR}/Heschl_sub_left.nii.gz, ${SUBJ_ROI_DIR}/Heschl_sub_right.nii.gz"
-}
+
+    # Verify transformation file
+    if [ ! -f "$TRANSFORM" ]; then
+        echo "Error: Transform file does not exist: $TRANSFORM" >&2
+        exit 1
+    fi
 
     # Inverse transform ROIs (whole and split) to native T1w space
     echo "Inverse transforming ROIs for sub-${subject}..."
@@ -162,7 +205,6 @@ preprocess_subject() {
     echo "ROIs transformed to native space: $SMA_PMC_NATIVE, $SMA_PMC_NATIVE_LEFT, $SMA_PMC_NATIVE_RIGHT, $STG_NATIVE, $STG_NATIVE_LEFT, $STG_NATIVE_RIGHT, $HESCHL_NATIVE, $HESCHL_NATIVE_LEFT, $HESCHL_NATIVE_RIGHT"
 }
 
-
 # Function to process post-stats for a subject and task
 process_post_stats() {
     local subject=$1
@@ -171,7 +213,6 @@ process_post_stats() {
     # Subject directory and FEAT output paths
     SUBJ_ROI_DIR=$SUBDIR/ROI  # Subject-specific ROI directory
     OUTPUT_DIR=$SUBDIR/fsl_stats/sub-${subject}_task-${task}_contrasts.feat
-    t_map="${OUTPUT_DIR}/randomise_time_series_tstat1.nii.gz"
     fslmaths ${OUTPUT_DIR}/stats/zstat1.nii.gz -mas ${SUBDIR}/func/sub-${subject}_ses-01_task-${task}_space-MNI152NLin6Asym_desc-brain_mask.nii.gz ${OUTPUT_DIR}/stats/remasked_zstat1.nii.gz
     fslmaths ${OUTPUT_DIR}/thresh_zstat1.nii.gz -mas ${SUBDIR}/func/sub-${subject}_ses-01_task-${task}_space-MNI152NLin6Asym_desc-brain_mask.nii.gz ${OUTPUT_DIR}/remasked_thresh_zstat1.nii.gz
     ZSTAT=${OUTPUT_DIR}/stats/remasked_zstat1.nii.gz
@@ -186,6 +227,15 @@ process_post_stats() {
     TFCE_CORRP=${OUTPUT_DIR}/randomise_time_series_tfce_corrp_tstat1.nii.gz
     TFCE_CORRP_LEFT=${OUTPUT_DIR}/stats/randomise_time_series_tfce_corrp_tstat1_left.nii.gz
     TFCE_CORRP_RIGHT=${OUTPUT_DIR}/stats/randomise_time_series_tfce_corrp_tstat1_right.nii.gz
+    t_map=${OUTPUT_DIR}/randomise_time_series_tstat1.nii.gz
+    TFCE_CORRP_NATIVE=${OUTPUT_DIR}/stats/randomise_time_series_tfce_corrp_tstat1_native.nii.gz
+    t_map_NATIVE=${OUTPUT_DIR}/stats/randomise_time_series_tstat1_native.nii.gz
+    t_map_LEFT=${OUTPUT_DIR}/stats/randomise_time_series_tstat1_left.nii.gz
+    t_map_RIGHT=${OUTPUT_DIR}/stats/randomise_time_series_tstat1_right.nii.gz
+    TFCE_CORRP_LEFT_NATIVE=${OUTPUT_DIR}/stats/randomise_time_series_tfce_corrp_tstat1_left_native.nii.gz
+    TFCE_CORRP_RIGHT_NATIVE=${OUTPUT_DIR}/stats/randomise_time_series_tfce_corrp_tstat1_right_native.nii.gz
+    t_map_LEFT_NATIVE=${OUTPUT_DIR}/stats/randomise_time_series_tstat1_left_native.nii.gz
+    t_map_RIGHT_NATIVE=${OUTPUT_DIR}/stats/randomise_time_series_tstat1_right_native.nii.gz
     ICA_MAP=${OUTPUT_DIR}/sub-${subject}_${task}_dual_regression_maps.nii.gz
     ICA_MAP_THRESH=${OUTPUT_DIR}/sub-${subject}_${task}_ica_thresholded.nii.gz
     ICA_MAP_LEFT=${OUTPUT_DIR}/stats/sub-${subject}_${task}_dual_regression_maps_left.nii.gz
@@ -209,8 +259,8 @@ process_post_stats() {
     fslmaths "$ZSTAT" -thr $CLUSTER_THRESHOLD "$THRESH_ZSTAT_235"
     cluster -i "$THRESH_ZSTAT_235" -t $CLUSTER_THRESHOLD --mm --no_table
 
-    # Split z-maps into left and right hemispheres in MNI space
-    echo "Splitting z-maps and TFCE maps for sub-${subject} task-${task} in MNI space..."
+    # Split z-maps and TFCE maps into left and right hemispheres in MNI space
+    echo "Splitting z-maps, TFCE maps, and t-maps for sub-${subject} task-${task} in MNI space..."
     fslmaths "$ZSTAT" -roi 1 45 -1 -1 -1 -1 0 1 "$ZSTAT_LEFT"
     fslmaths "$ZSTAT" -roi 45 90 -1 -1 -1 -1 0 1 "$ZSTAT_RIGHT"
     fslmaths "$THRESH_ZSTAT" -roi 1 45 -1 -1 -1 -1 0 1 "$THRESH_ZSTAT_LEFT"
@@ -219,6 +269,8 @@ process_post_stats() {
     fslmaths "$THRESH_ZSTAT_235" -roi 45 90 -1 -1 -1 -1 0 1 "$THRESH_ZSTAT_RIGHT_235"
     fslmaths "$TFCE_CORRP" -roi 1 45 -1 -1 -1 -1 0 1 "$TFCE_CORRP_LEFT"
     fslmaths "$TFCE_CORRP" -roi 45 90 -1 -1 -1 -1 0 1 "$TFCE_CORRP_RIGHT"
+    fslmaths "$t_map" -roi 1 45 -1 -1 -1 -1 0 1 "$t_map_LEFT"
+    fslmaths "$t_map" -roi 45 90 -1 -1 -1 -1 0 1 "$t_map_RIGHT"
 
     # Split ICA maps and thresholded ICA maps into left and right hemispheres in MNI space
     echo "Splitting ICA maps and thresholded ICA maps for sub-${subject} task-${task} in MNI space..."
@@ -227,8 +279,8 @@ process_post_stats() {
     fslmaths "$ICA_MAP_THRESH" -roi 1 45 -1 -1 -1 -1 0 1 "$ICA_MAP_THRESH_LEFT"
     fslmaths "$ICA_MAP_THRESH" -roi 45 90 -1 -1 -1 -1 0 1 "$ICA_MAP_THRESH_RIGHT"
     
-     # Inverse transform z-maps, TFCE corrp, and thresholded TFCE corrp to native T1w space
-    echo "Inverse transforming z-maps, TFCE maps, and thresholded TFCE maps for sub-${subject} task-${task}..."
+    # Inverse transform z-maps, TFCE corrp, t-maps, and thresholded TFCE corrp to native T1w space
+    echo "Inverse transforming z-maps, TFCE maps, t-maps, and thresholded TFCE maps for sub-${subject} task-${task}..."
     antsApplyTransforms -d 3 -i "$ZSTAT" -r "$T1W_SKULL_STRIPPED" -o "$ZSTAT_NATIVE" \
         -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
     antsApplyTransforms -d 3 -i "$THRESH_ZSTAT" -r "$T1W_SKULL_STRIPPED" -o "$THRESH_ZSTAT_NATIVE" \
@@ -247,8 +299,19 @@ process_post_stats() {
         -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
     antsApplyTransforms -d 3 -i "$THRESH_ZSTAT_RIGHT_235" -r "$T1W_SKULL_STRIPPED" -o "$THRESH_ZSTAT_RIGHT_NATIVE_235" \
         -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
-    echo "Inverse transform completed: z-maps, TFCE maps, and thresholded TFCE maps in native space: $ZSTAT_NATIVE, $THRESH_ZSTAT_NATIVE, $THRESH_ZSTAT_235_NATIVE, $ZSTAT_LEFT_NATIVE, $ZSTAT_RIGHT_NATIVE, $THRESH_ZSTAT_LEFT_235_NATIVE, $THRESH_ZSTAT_RIGHT_235_NATIVE "
-    
+    antsApplyTransforms -d 3 -i "$TFCE_CORRP" -r "$T1W_SKULL_STRIPPED" -o "$TFCE_CORRP_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$TFCE_CORRP_LEFT" -r "$T1W_SKULL_STRIPPED" -o "$TFCE_CORRP_LEFT_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$TFCE_CORRP_RIGHT" -r "$T1W_SKULL_STRIPPED" -o "$TFCE_CORRP_RIGHT_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$t_map" -r "$T1W_SKULL_STRIPPED" -o "$t_map_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$t_map_LEFT" -r "$T1W_SKULL_STRIPPED" -o "$t_map_LEFT_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$t_map_RIGHT" -r "$T1W_SKULL_STRIPPED" -o "$t_map_RIGHT_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    echo "Inverse transform completed: z-maps, TFCE maps, t-maps, and thresholded TFCE maps in native space: $ZSTAT_NATIVE, $THRESH_ZSTAT_NATIVE, $THRESH_ZSTAT_235_NATIVE, $ZSTAT_LEFT_NATIVE, $ZSTAT_RIGHT_NATIVE, $THRESH_ZSTAT_LEFT_235_NATIVE, $THRESH_ZSTAT_RIGHT_235_NATIVE, $TFCE_CORRP_NATIVE, $TFCE_CORRP_LEFT_NATIVE, $TFCE_CORRP_RIGHT_NATIVE, $t_map_NATIVE, $t_map_LEFT_NATIVE, $t_map_RIGHT_NATIVE"
 
     # Task-specific ROI mappings for both spaces
     if [[ "$task" == "motor_run-01" || "$task" == "motor_run-02" ]]; then
@@ -282,8 +345,8 @@ process_post_stats() {
     echo "Subject,Task,Space,ROI,Threshold,Stat Type,Activated Voxels across Whole Brain (counts),Activated Voxels within ROI (counts),Activated Voxels across Whole Brain (%),Activated Voxels within ROI (%),Activated ROI/WB (%),%Activated ROI/%Activated WB (ratio),Voxels in ROI (counts),Voxels in Whole Brain (counts),Dice Coefficient,Coverage T-map (%),Coverage Z-map (%),Coverage T-map ROI (%),Coverage Z-map ROI (%)" > "$CSV_FILE"
 
     # Process MNI and NATIVE space
-    for space in "MNI" "NATIVE"; do
-        # Set ROIs and maps for MNI space
+    for space in "MNI" "Native"; do
+        # Set ROIs and maps for MNI and Native space
         if [ "$space" == "Native" ]; then
             ZSTAT_USE="$ZSTAT_NATIVE"
             THRESH_ZSTAT_USE="$THRESH_ZSTAT_NATIVE"
@@ -294,6 +357,18 @@ process_post_stats() {
             THRESH_ZSTAT_RIGHT_USE="$THRESH_ZSTAT_RIGHT_NATIVE"
             THRESH_ZSTAT_LEFT_235_USE="$THRESH_ZSTAT_LEFT_NATIVE_235"
             THRESH_ZSTAT_RIGHT_235_USE="$THRESH_ZSTAT_RIGHT_NATIVE_235"
+            TFCE_CORRP_USE="$TFCE_CORRP_NATIVE"
+            TFCE_CORRP_LEFT_USE="$TFCE_CORRP_LEFT_NATIVE"
+            TFCE_CORRP_RIGHT_USE="$TFCE_CORRP_RIGHT_NATIVE"
+            t_map_USE="$t_map_NATIVE"
+            t_map_LEFT_USE="$t_map_LEFT_NATIVE"
+            t_map_RIGHT_USE="$t_map_RIGHT_NATIVE"
+            ICA_MAP_USE="$ICA_MAP"
+            ICA_MAP_THRESH_USE="$ICA_MAP_THRESH"
+            ICA_MAP_LEFT_USE="$ICA_MAP_LEFT"
+            ICA_MAP_RIGHT_USE="$ICA_MAP_RIGHT"
+            ICA_MAP_THRESH_LEFT_USE="$ICA_MAP_THRESH_LEFT"
+            ICA_MAP_THRESH_RIGHT_USE="$ICA_MAP_THRESH_RIGHT"
             if [[ "$task" == "motor_run-01" || "$task" == "motor_run-02" ]]; then
                 ROI_WB="$ROI_WB_NATIVE"
                 ROI_LEFT="$ROI_LEFT_NATIVE"
@@ -319,6 +394,9 @@ process_post_stats() {
             TFCE_CORRP_USE="$TFCE_CORRP"
             TFCE_CORRP_LEFT_USE="$TFCE_CORRP_LEFT"
             TFCE_CORRP_RIGHT_USE="$TFCE_CORRP_RIGHT"
+            t_map_USE="$t_map"
+            t_map_LEFT_USE="$t_map_LEFT"
+            t_map_RIGHT_USE="$t_map_RIGHT"
             ICA_MAP_USE="$ICA_MAP"
             ICA_MAP_THRESH_USE="$ICA_MAP_THRESH"
             ICA_MAP_LEFT_USE="$ICA_MAP_LEFT"
@@ -423,23 +501,19 @@ process_post_stats() {
             if [ "$roi_label" == "Whole-brain" ] || [ "$roi_label" == "Whole-brain STG" ] || [ "$roi_label" == "Whole-brain Heschl" ]; then
                 tfce_map="$TFCE_CORRP_USE"  # Unthresholded TFCE
                 thresh_z_map="$THRESH_ZSTAT_USE"  # Compare with Z=3.1
-                t_map_use="$t_map"  # Full t-map
+                t_map_use="$t_map_USE"  # Full t-map
             elif [ "$roi_label" == "Left" ] || [ "$roi_label" == "Left STG" ] || [ "$roi_label" == "Left Heschl" ]; then
                 tfce_map="$TFCE_CORRP_LEFT_USE"  # Unthresholded TFCE
                 thresh_z_map="$THRESH_ZSTAT_LEFT_USE"  # Compare with Z=3.1
-                t_map_left="${OUTPUT_DIR}/stats/randomise_time_series_tstat1_left.nii.gz"
-                fslmaths "$t_map" -roi 1 45 -1 -1 -1 -1 0 1 "$t_map_left"
-                t_map_use="$t_map_left"
+                t_map_use="$t_map_LEFT_USE"
             elif [ "$roi_label" == "Right" ] || [ "$roi_label" == "Right STG" ] || [ "$roi_label" == "Right Heschl" ]; then
                 tfce_map="$TFCE_CORRP_RIGHT_USE"  # Unthresholded TFCE
                 thresh_z_map="$THRESH_ZSTAT_RIGHT_USE"  # Compare with Z=3.1
-                t_map_right="${OUTPUT_DIR}/stats/randomise_time_series_tstat1_right.nii.gz"
-                fslmaths "$t_map" -roi 45 90 -1 -1 -1 -1 0 1 "$t_map_right"
-                t_map_use="$t_map_right"
+                t_map_use="$t_map_RIGHT_USE"
             fi
 
-            # Total voxels in the tfce_map (whole brain or hemisphere)
-            total_voxels=$(fslstats "$t_map" -V | awk '{print $1}')
+            # Total voxels in the t-map (whole brain or hemisphere)
+            total_voxels=$(fslstats "$t_map_use" -V | awk '{print $1}')
             # Total voxels in the ROI mask
             roi_voxels=$(fslstats "$roi_path" -V | awk '{print $1}')
 

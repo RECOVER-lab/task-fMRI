@@ -205,7 +205,7 @@ class DataProcessor:
 
         # Filter for Z-stats and TFCE separately
         df_zstat = df_all[(df_all['Space'] == space) & (df_all['Threshold'] == f"Z={threshold}") & (df_all['Stat Type'] == 'Z-stat')]
-        df_tfce = df_all[(df_all['Space'] == space) & (df_all['Threshold'] == 'p<0.05') & (df_all['Stat Type'] == 'TFCE')]
+        df_tfce = df_all[(df_all['Space'] == space) & (df_all['Threshold'] == 'TFCE') & (df_all['Stat Type'] == 'TFCE')]
         
         logging.info(f"Z-stat df has {len(df_zstat)} rows, TFCE df has {len(df_tfce)} rows for {space} and threshold {threshold}")
 
@@ -299,11 +299,11 @@ class DataProcessor:
                     cell.set_facecolor('#f2f2f2')
                 cell.set_height(0.07)  # Adjusted height for more rows
         else:
-            ax_tfce.text(0.5, 0.5, f"No TFCE data available for {space} space (p<0.05)", 
+            ax_tfce.text(0.5, 0.5, f"No TFCE data available for {space} space (TFCE)", 
                          ha='center', va='center', fontsize=10, color='red')
         
         ax_tfce.axis('off')
-        plt.suptitle(f"Supra-thresholded Voxels in {space} Space (p-corrected t-map, p<0.05)", fontweight='bold', fontsize=12)
+        plt.suptitle(f"Supra-thresholded Voxels in {space} Space (p-corrected t-map)", fontweight='bold', fontsize=12)
         annotation_text = (
             f"Whole-brain voxel counts: {', '.join(map(str, tfce_wb_voxels))}\n"
             f"ROI voxel counts (order follows table): {', '.join(map(str, tfce_roi_voxels))}\n"
@@ -319,8 +319,8 @@ class DataProcessor:
 
     def process_data(self):
         logging.info(f"Processing data for subject {self.subject}")
-        native_roi_fig_31 = self.plot_roi('Native', threshold=3.1)
-        native_roi_fig_235 = self.plot_roi('Native', threshold=2.35)
+        # native_roi_fig_31 = self.plot_roi('Native', threshold=3.1)
+        # native_roi_fig_235 = self.plot_roi('Native', threshold=2.35)
         native_table_fig_zstat_31, native_df_zstat_31, native_table_fig_tfce_31, native_df_tfce_31 = self.plot_table('Native', threshold=3.1)
         native_table_fig_zstat_235, native_df_zstat_235, native_table_fig_tfce_235, native_df_tfce_235 = self.plot_table('Native', threshold=2.35)
         mni_roi_fig_31 = self.plot_roi('MNI', threshold=3.1)
@@ -341,8 +341,8 @@ class DataProcessor:
                                                               bg_img=self.t1_native, threshold=0, title=f"{task} Unthresholded")
                                       for task, task_info in self.task_roi_mapping.items()}
         return {
-            'native_roi_fig_31': native_roi_fig_31,
-            'native_roi_fig_235': native_roi_fig_235,
+            # 'native_roi_fig_31': native_roi_fig_31,
+            # 'native_roi_fig_235': native_roi_fig_235,
             'native_table_fig_zstat_31': native_table_fig_zstat_31,
             'native_table_fig_tfce_31': native_table_fig_tfce_31,
             'native_table_fig_zstat_235': native_table_fig_zstat_235,
