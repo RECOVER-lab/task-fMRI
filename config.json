@@ -1,6 +1,6 @@
 {
     "config": {
-        "cluster_threshold": 2.5
+        "cluster_threshold": 2.35
     },
     "inputs": {
         "fmriprep_dir": {
