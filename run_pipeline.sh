@@ -15,7 +15,7 @@ export USER="flywheel"
 # Default configuration
 #TASKS="motor_run-01 motor_run-02 lang"
 TASKS="motor_run-01"
-CLUSTER_THRESHOLD=3.1
+CLUSTER_THRESHOLD=2.35
 
 # Usage message
 usage() {
