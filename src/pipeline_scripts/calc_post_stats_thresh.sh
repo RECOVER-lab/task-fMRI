@@ -240,8 +240,15 @@ process_post_stats() {
     ICA_MAP_THRESH=${OUTPUT_DIR}/sub-${subject}_${task}_ica_thresholded.nii.gz
     ICA_MAP_LEFT=${OUTPUT_DIR}/stats/sub-${subject}_${task}_dual_regression_maps_left.nii.gz
     ICA_MAP_RIGHT=${OUTPUT_DIR}/stats/sub-${subject}_${task}_dual_regression_maps_right.nii.gz
+    ICA_MAP_NATIVE=${OUTPUT_DIR}/stats/sub-${subject}_${task}_dual_regression_maps_native.nii.gz
+    ICA_MAP_THRESH_NATIVE=${OUTPUT_DIR}/stats/sub-${subject}_${task}_ica_thresholded_native.nii.gz
     ICA_MAP_THRESH_LEFT=${OUTPUT_DIR}/stats/sub-${subject}_${task}_ica_thresholded_left.nii.gz
-    ICA_MAP_THRESH_RIGHT=${OUTPUT_DIR}/stats/sub-${subject}_${task}_dual_regression_maps_right.nii.gz
+    ICA_MAP_THRESH_RIGHT=${OUTPUT_DIR}/stats/sub-${subject}_${task}_ica_thresholded_right.nii.gz
+    ICA_MAP_LEFT_NATIVE=${OUTPUT_DIR}/stats/sub-${subject}_${task}_dual_regression_maps_left_native.nii.gz
+    ICA_MAP_RIGHT_NATIVE=${OUTPUT_DIR}/stats/sub-${subject}_${task}_dual_regression_maps_right_native.nii.gz
+    ICA_MAP_THRESH_LEFT_NATIVE=${OUTPUT_DIR}/stats/sub-${subject}_${task}_ica_thresholded_left_native.nii.gz
+    ICA_MAP_THRESH_RIGHT_NATIVE=${OUTPUT_DIR}/stats/sub-${subject}_${task}_ica_thresholded_right_native.nii.gz
+
     ZSTAT_NATIVE=${OUTPUT_DIR}/stats/zstat1_native.nii.gz
     THRESH_ZSTAT_NATIVE=${OUTPUT_DIR}/stats/thresh_zstat1_native.nii.gz
     THRESH_ZSTAT_235_NATIVE=${OUTPUT_DIR}/stats/thresh_zstat1_235_native.nii.gz
@@ -311,6 +318,19 @@ process_post_stats() {
         -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
     antsApplyTransforms -d 3 -i "$t_map_RIGHT" -r "$T1W_SKULL_STRIPPED" -o "$t_map_RIGHT_NATIVE" \
         -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$ICA_MAP" -r "$T1W_SKULL_STRIPPED" -o "$ICA_MAP_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$ICA_MAP_THRESH" -r "$T1W_SKULL_STRIPPED" -o "$ICA_MAP_THRESH_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$ICA_MAP_LEFT" -r "$T1W_SKULL_STRIPPED" -o "$ICA_MAP_LEFT_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$ICA_MAP_RIGHT" -r "$T1W_SKULL_STRIPPED" -o "$ICA_MAP_RIGHT_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$ICA_MAP_THRESH_LEFT" -r "$T1W_SKULL_STRIPPED" -o "$ICA_MAP_THRESH_LEFT_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0
+    antsApplyTransforms -d 3 -i "$ICA_MAP_THRESH_RIGHT" -r "$T1W_SKULL_STRIPPED" -o "$ICA_MAP_THRESH_RIGHT_NATIVE" \
+        -t "$TRANSFORM" -n Linear --float --default-value 0 -e 0    
+    
     echo "Inverse transform completed: z-maps, TFCE maps, t-maps, and thresholded TFCE maps in native space: $ZSTAT_NATIVE, $THRESH_ZSTAT_NATIVE, $THRESH_ZSTAT_235_NATIVE, $ZSTAT_LEFT_NATIVE, $ZSTAT_RIGHT_NATIVE, $THRESH_ZSTAT_LEFT_235_NATIVE, $THRESH_ZSTAT_RIGHT_235_NATIVE, $TFCE_CORRP_NATIVE, $TFCE_CORRP_LEFT_NATIVE, $TFCE_CORRP_RIGHT_NATIVE, $t_map_NATIVE, $t_map_LEFT_NATIVE, $t_map_RIGHT_NATIVE"
 
     # Task-specific ROI mappings for both spaces
@@ -363,12 +383,12 @@ process_post_stats() {
             t_map_USE="$t_map_NATIVE"
             t_map_LEFT_USE="$t_map_LEFT_NATIVE"
             t_map_RIGHT_USE="$t_map_RIGHT_NATIVE"
-            ICA_MAP_USE="$ICA_MAP"
-            ICA_MAP_THRESH_USE="$ICA_MAP_THRESH"
-            ICA_MAP_LEFT_USE="$ICA_MAP_LEFT"
-            ICA_MAP_RIGHT_USE="$ICA_MAP_RIGHT"
-            ICA_MAP_THRESH_LEFT_USE="$ICA_MAP_THRESH_LEFT"
-            ICA_MAP_THRESH_RIGHT_USE="$ICA_MAP_THRESH_RIGHT"
+            ICA_MAP_USE="$ICA_MAP_NATIVE"
+            ICA_MAP_THRESH_USE="$ICA_MAP_THRESH_NATIVE"
+            ICA_MAP_LEFT_USE="$ICA_MAP_LEFT_NATIVE"
+            ICA_MAP_RIGHT_USE="$ICA_MAP_RIGHT_NATIVE"
+            ICA_MAP_THRESH_LEFT_USE="$ICA_MAP_THRESH_LEFT_NATIVE"
+            ICA_MAP_THRESH_RIGHT_USE="$ICA_MAP_THRESH_RIGHT_NATIVE"
             if [[ "$task" == "motor_run-01" || "$task" == "motor_run-02" ]]; then
                 ROI_WB="$ROI_WB_NATIVE"
                 ROI_LEFT="$ROI_LEFT_NATIVE"
