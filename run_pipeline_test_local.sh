@@ -14,8 +14,8 @@ set -o pipefail
 export USER="flywheel"
 # Default configuration
 TASKS="motor_run-01 motor_run-02 lang"
-# TASKS="motor_run-01"
 CLUSTER_THRESHOLD=2.35
+TR=0.8
 
 # Usage message
 usage() {
@@ -41,12 +41,12 @@ check_dir() {
     fi
 }
 
-# Set ANTs path
-export PATH="/Users/aliceqichaowu/ANTs/bin:$PATH"
-if ! command -v antsApplyTransforms &> /dev/null; then
-    echo "Error: antsApplyTransforms not found. Please verify ANTs installation at /Users/aliceqichaowu/ANTs/bin or adjust PATH."
-    exit 1
-fi
+# # Set ANTs path
+# export PATH="/Users/aliceqichaowu/ANTs/bin:$PATH"
+# if ! command -v antsApplyTransforms &> /dev/null; then
+#     echo "Error: antsApplyTransforms not found. Please verify ANTs installation at /Users/aliceqichaowu/ANTs/bin or adjust PATH."
+#     exit 1
+# fi
 
 # Flywheel directories
 base_dir=/Users/aliceqichaowu/Downloads/fw_gear_taskfMRI
@@ -195,7 +195,7 @@ run_cal_post_stats() {
 
 run_ica() {
     local subjects="$@"
-    python "$ICA_CORRELATION" --sub_dir "$SUBDIR" --tasks "$TASKS" "$subjects" || {
+    python "$ICA_CORRELATION" --tr "$TR" --sub_dir "$SUBDIR" --tasks "$TASKS" "$subjects" || {
         echo "[$(date)] Error: ica_corr.py failed for subjects $subjects" >&2
         exit 1
     }
@@ -212,13 +212,13 @@ run_output_generator() {
 }
 
 # Execute steps
-run_feat_stats "$SUBJECT"
-run_permutation_test "$SUBJECT"
+# run_feat_stats "$SUBJECT"
+# # run_permutation_test "$SUBJECT"
 run_ica "$SUBJECT"
-run_cal_post_stats "$SUBJECT"
-run_output_generator "$SUBJECT"
+# run_cal_post_stats "$SUBJECT"
+# run_output_generator "$SUBJECT"
 
 # Checkpoint: Organize outputs
 cd "$SUBDIR"
-del post_stats/*.txt
+# del post_stats/*.txt
 zip -r "$OUTPUT_DIR/taskfMRI_outputs.zip" post_stats/
