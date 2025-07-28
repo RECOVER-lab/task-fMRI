@@ -21,6 +21,7 @@ import nibabel as nib
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Generate ICA reports for subjects")
+parser.add_argument("--tr", type=float, help="Repetition time (TR) in seconds")
 parser.add_argument("--sub_dir", required=True, help="Directory containing input data")
 parser.add_argument("--tasks", required=True, help="Space-separated list of tasks (e.g., 'motor_run-01 motor_run-02 lang')")
 parser.add_argument("subjects", nargs="+", help="List of subject IDs")
@@ -29,8 +30,8 @@ args = parser.parse_args()
 sub_dir = args.sub_dir
 tasks = args.tasks.split()  # Convert space-separated string to list
 
+tr= args.tr
 # Set up task timing to convert to volumes
-tr = 0.8  # Repetition time in seconds
 block_duration = int(16 / tr)  # Number of time points per block (16s on/off)
 num_blocks = 10  # Number of on-off cycles
 
