@@ -16,6 +16,7 @@ export USER="flywheel"
 #TASKS="motor_run-01 motor_run-02 lang"
 TASKS="motor_run-01"
 CLUSTER_THRESHOLD=2.35
+TR=0.8
 
 # Usage message
 usage() {
@@ -189,7 +190,7 @@ run_cal_post_stats() {
 # Function to run ICA
 run_ica() {
     local subjects="$@"
-    python "$ICA_CORRELATION" --sub_dir "$SUBDIR" --tasks "$TASKS" "$subjects" || {
+    python "$ICA_CORRELATION" --tr "$TR" --sub_dir "$SUBDIR" --tasks "$TASKS" "$subjects" || {
         echo "[$(date)] Error: ica_corr.py failed for subjects $subjects" >&2
         exit 1
     }
