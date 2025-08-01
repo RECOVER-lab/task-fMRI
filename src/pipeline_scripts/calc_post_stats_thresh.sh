@@ -257,7 +257,13 @@ process_post_stats() {
     # Cluster threshold at Z=2.35 for z-stats
     echo "Generating thresholded z-map at Z=2.35 for sub-${subject} task-${task}..."
     fslmaths "$ZSTAT" -thr $CLUSTER_THRESHOLD "$THRESH_ZSTAT_235"
-    cluster -i "$THRESH_ZSTAT_235" -t $CLUSTER_THRESHOLD --mm --no_table
+    if [ -n "$(which fsl-cluster)" ]
+    then
+          FslClusterCmd=fsl-cluster
+    else
+          FslClusterCmd=cluster
+    fi
+    "$FslClusterCmd" -i "$THRESH_ZSTAT_235" -t $CLUSTER_THRESHOLD --mm --no_table
 
     # Split z-maps and TFCE maps into left and right hemispheres in MNI space
     echo "Splitting z-maps, TFCE maps, and t-maps for sub-${subject} task-${task} in MNI space..."

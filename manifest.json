@@ -88,7 +88,8 @@
     "NVIDIA_VISIBLE_DEVICES": "all",
     "NCCL_VERSION": "2.27.3-1",
     "NV_LIBNPP_DEV_VERSION": "12.4.1.87-1",
-    "DATADIR": "/flywheel/v0/work/fmriprep_unzipped/67cf0442cc5019460f9cc3aa"
+    "DATADIR": "/flywheel/v0/work/fmriprep_unzipped/67cf0442cc5019460f9cc3aa",
+    "NV_CUDNN_PACKAGE_DEV_HEADERS": "libcudnn9-headers-cuda-12=9.10.2.21-1"
   },
   "custom": {
     "gear-builder": {

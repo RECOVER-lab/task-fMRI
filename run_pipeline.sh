@@ -13,8 +13,8 @@ set -o pipefail
 
 export USER="flywheel"
 # Default configuration
-#TASKS="motor_run-01 motor_run-02 lang"
 TASKS="motor_run-01"
+TASKS="motor_run-01 motor_run-02 lang"
 CLUSTER_THRESHOLD=2.35
 
 # Usage message
