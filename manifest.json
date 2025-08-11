@@ -33,7 +33,7 @@
     "ANTSPATH": "/opt/ants-2.5.4/bin",
     "FSLMULTIFILEQUIT": "TRUE",
     "FSLTCLSH": "/opt/fsl-6.0.7.1/bin/fsltclsh",
-    "PATH": "/opt/fsl-6.0.7.1/bin:/opt/ants-2.5.4/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "PATH": "/opt/fsl-6.0.7.1/bin:/opt/ants-2.5.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
     "FSLGECUDAQ": "cuda.q",
     "FSLOUTPUTTYPE": "NIFTI_GZ",
     "DEBIAN_FRONTEND": "noninteractive",

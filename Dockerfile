@@ -1,6 +1,8 @@
 # Base stage with common dependencies, try 24.04
 #FROM ubuntu:22.04 AS base
-FROM  nvidia/cuda:12.9.1-cudnn-devel-ubuntu24.04 AS base
+#FROM nvidia/cuda:12.9.1-cudnn-devel-ubuntu24.04 AS base
+FROM ubuntu:24.04 AS base
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
